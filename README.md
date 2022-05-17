@@ -8,4 +8,4 @@ This application was created for converting of currencies
 
 
 # Show application
-https://git.heroku.com/ccurrency-git.git 
+https://ccurrency-git.herokuapp.com/
