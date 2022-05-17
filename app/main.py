@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from module_currency import get_currency, exec_converter 
+from app.module_currency import get_currency, exec_converter 
 
 
 app = Flask(__name__, static_folder="static")
@@ -24,6 +24,3 @@ def index():
             'amount': exec_converter(from_curr, to_curr, count_curr)
         }
     return render_template('home.html', context=context)
-
-
-app.run(debug=True) if __name__ == '__main__' else None
