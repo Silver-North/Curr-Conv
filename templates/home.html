@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %} CConverter {% endblock %}
+
+
+{% block content %}
+    <form method="post">
+        
+        <label class="form-label mt-4" for="current-value">Input count</label>
+        <input class="form-control" type="number" step='any' placeholder="0.00" name="current-value" id="current-value" required value="{{ context['curr'] }}" autofocus min=0>
+            
+        <label class="form-label mt-4" for="from">From convert:</label>
+        <select class="form-control" name="from" id="from">
+        {% for elem in context['currency'] %}
+            <option value="{{ elem }}" {% if context['from'] == elem %}selected{% endif %}>{{ elem }}</option>
+        {% endfor %}
+        </select>
+
+        <label class="form-label mt-4" for="to">To convert:</label>
+        <select class="form-control" name="to" id="to">
+        {% for elem in context['currency'] %}
+            <option value="{{ elem }}" {% if context['to'] == elem %}selected{% endif %}>{{ elem }}</option>
+        {% endfor %}
+        </select>
+
+        <p class='sub-p'>
+            <input class="form-control btn btn-outline-success click" type="submit" value="Convert">
+        </p>
+
+    </form>
+
+    {% if context['amount'] or context['amount'] == 0 %}
+    <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+        <div class="card-header">Rezult of converted:</div>
+        <div class="rezult card-body">
+            {{ context['amount'] }} {{ context['to'] }}
+        </div>
+    </div>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,24 @@
+.content {
+    padding: 0 1.5% 0.5%;
+    margin: 14% 40% 0;
+    background: #4141417e;
+    text-align: center;
+    border-radius: 7%;
+}
+
+label {
+    color: #ffffff;
+}
+
+.sub-p { padding-top: 2.5%; }
+
+.rezult { text-align: center}
+
+body {
+    background-image: url('background.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%
+}
