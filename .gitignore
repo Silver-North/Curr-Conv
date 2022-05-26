@@ -1,8 +1,4 @@
-__pycache__
-app/__pycache__
-bin/
-include/
-lib/
-lib64
-/pyvenv.cfg
+venv/
+__pycache__/
 /pyrightconfig.json
+/Makefile

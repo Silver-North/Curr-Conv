@@ -1,11 +1,11 @@
 from flask import Flask, render_template, request
-from app.module_currency import get_currency, exec_converter 
+from module_currency import get_currency, exec_converter 
 
 
-app = Flask(__name__, static_folder="static")
+server = Flask(__name__, static_folder='static')
 
 
-@app.route('/', methods=['POST', 'GET'])
+@server.route("/", methods=["POST", "GET"])
 def index():
     if request.method == "GET":
         context ={
@@ -24,3 +24,7 @@ def index():
             'amount': exec_converter(from_curr, to_curr, count_curr)
         }
     return render_template('home.html', context=context)
+
+
+if __name__ == "__main__":
+    server.run(host="0.0.0.0")
